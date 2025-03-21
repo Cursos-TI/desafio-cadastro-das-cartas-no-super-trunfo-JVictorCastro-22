@@ -37,14 +37,8 @@ scanf("%f", &pib1);
 printf("Digite o número de pontos turísticos da cidade:\n");
 scanf("%d", &npt1);
 
-printf("Digite a densidade Populacional:\n");
-scanf("%f", &dp1);
-
-printf("Digite o PIB per Capita:\n");
-scanf("%f", &pibpc1);
-
-
-
+dp1 = populacao1 / area1;
+pibpc1 = (pib1 * 1e9) / populacao1;
 
 
 printf("\n Próxima carta:\n");
@@ -84,39 +78,35 @@ scanf("%f", &pib2);
 printf("Digite o número de pontos turísticos da cidade:\n");
 scanf("%d", &npt2);
 
-printf("Digite a densidade Populacional:\n");
-scanf("%f", &dp2);
-
-printf("Digite PIB per Capita:\n");
-scanf("%f", &pibpc2);
-
+dp2 = populacao2 / area2;
+pibpc2 = (pib2 * 1e9) / populacao2;
 
 //Exibir dados da primeira carta
 
 printf("\n Carta 1:\n");
-printf("Estado:%c\n", estado1);
-printf("Código:%s\n", codigo1);
-printf("Nome da cidade:%s\n", nome1);
+printf("Estado: %c\n", estado1);
+printf("Código: %s\n", codigo1);
+printf("Nome da cidade: %s\n", nome1);
 printf("População:%d\n", populacao1);
 printf("Área da cidade em: %2.f km²\n", area1);
 printf("PIB: %2.f Bilhões de reais \n", pib1);
-printf("Número de pontos turísticos:%d\n", npt1);
-printf("Densidade Populacional:%2.f hab/km²\n",dp1);
-printf("PIB per Capita:%2.f de Reias\n",pibpc1);
+printf("Número de pontos turísticos: %d\n", npt1);
+printf("Densidade Populacional: %2.f hab/km²\n",dp1);
+printf("PIB per Capita: %2.f de Reias\n",pibpc1);
 
 //Exibir dados da segunda carta
 
 printf("\n Carta 2:\n");
-printf("Estado:%c\n", estado2);
-printf("Código:%s\n", codigo2);
-printf("Nome da cidade:%s\n", nome2);
-printf("População:%d\n", populacao2);
+printf("Estado: %c\n", estado2);
+printf("Código: %s\n", codigo2);
+printf("Nome da cidade: %s\n", nome2);
+printf("População: %d\n", populacao2);
 printf("Área da cidade em: %2.f km²\n", area2);
-printf("PIB:%2.f Bilhões de reais \n", pib2);
-printf("Número de pontos turísticos:%d\n", npt2);
-printf("Densidade Populacional:%2.f hab/km²\n",dp2);
-printf("PIB per Capita:%2.f de Reias\n",pibpc2);   
+printf("PIB: %2.f Bilhões de reais \n", pib2);
+printf("Número de pontos turísticos: %d\n", npt2);
+printf("Densidade Populacional: %2.f hab/km²\n",dp2);
+printf("PIB per Capita: %2.f de Reias\n",pibpc2);   
     
     
-    
+return 0;   
 }
