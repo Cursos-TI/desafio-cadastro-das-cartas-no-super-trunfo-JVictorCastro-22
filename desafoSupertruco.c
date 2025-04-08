@@ -39,7 +39,7 @@ printf("Digite o número de pontos turísticos da cidade:\n");
 scanf("%d", &npt1);
 
 dp1 = populacao1 / area1;
-pibpc1 = pib1 * 1000000 / populacao1; // Multiplica por 1 milhão
+pibpc1 = pib1 / populacao1; 
 
 SuperPoder1 = populacao1 + area1 + pib1 + npt1 + pibpc1;
 
@@ -82,7 +82,7 @@ printf("Digite o número de pontos turísticos da cidade:\n");
 scanf("%d", &npt2);
 
 dp2 = populacao2 / area2;
-pibpc2 = pib2 * 1000000 / populacao2; // Multiplica por 1 milhão
+pibpc2 = pib2 / populacao2;
 
 SuperPoder2 = populacao2 + area2 + pib2 + npt2 + pibpc2;
 
@@ -97,7 +97,7 @@ printf("Área da cidade em: %2.f km²\n", area1);
 printf("PIB: R$%.2f Bilhões\n", pib1);
 printf("Número de pontos turísticos: %d\n", npt1);
 printf("Densidade Populacional: %.2f hab/km²\n",dp1);
-printf("PIB per Capita: R$%.2f\n",pibpc1);
+printf("PIB per Capita: R$%.2f Bilhões\n",pibpc1);
 
 //Exibir dados da segunda carta
 
@@ -110,7 +110,7 @@ printf("Área da cidade em: %2.f km²\n", area2);
 printf("PIB: R$%.2f Bilhões\n", pib2);
 printf("Número de pontos turísticos: %d\n", npt2);
 printf("Densidade Populacional: %.2f hab/km²\n",dp2);
-printf("PIB per Capita: R$%.2f \n",pibpc2);   
+printf("PIB per Capita: R$%.2f Bilhões \n",pibpc2);   
 
 printf("\nResultado do vencedor:\n");
 printf("Empate: %s\n", (SuperPoder1 == SuperPoder2) ? "Sim" : "Não");
