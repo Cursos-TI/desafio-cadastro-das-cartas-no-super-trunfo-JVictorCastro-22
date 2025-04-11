@@ -1,15 +1,19 @@
 #include <stdio.h>
-/*nome: manaus
+/*
+nome: manaus
 população:2279686 
 aréa em km²:114010.92
 pib:45782.75
 pontos turisticos:5
+
 ********************
+
 Nome: Bahia
 População:  14850513 
 Área em km²: 564760.429
 PIB: 402646605640
-pontos turisticos:5*/
+pontos turisticos:5
+*/
 
 int main() {
  //declarar variáveis para a primeira carta
