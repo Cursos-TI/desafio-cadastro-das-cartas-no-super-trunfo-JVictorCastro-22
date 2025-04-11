@@ -1,19 +1,17 @@
 #include <stdio.h>
 /*
+DADOS DAS CARTAS
 nome: manaus
 população:2279686 
 aréa em km²:114010.92
-pib:45782.75
+pib:103281000000
 pontos turisticos:5
-
 ********************
-
 Nome: Bahia
 População:  14850513 
 Área em km²: 564760.429
 PIB: 402646605640
-pontos turisticos:5
-*/
+pontos turisticos:5*/
 
 int main() {
  //declarar variáveis para a primeira carta
@@ -25,8 +23,8 @@ float area1;
 float pib1;
 int npt1; //número de pontos turísticos
 float dp1; // Densidade Populacional
-float pibpc1; // PIB per Capita
-
+float pibpc1; // PIB per Capita:
+//float SuperPoder1;
 
 // Ler variáveis para a primeira carta
 
@@ -56,6 +54,7 @@ scanf("%d", &npt1);
 dp1 = populacao1 / area1;
 pibpc1 = pib1 / populacao1; 
 
+//SuperPoder1 = populacao1 + area1 + pib1 + npt1 + pibpc1;
 
 
 printf("\n Próxima carta:\n");
@@ -124,12 +123,11 @@ printf("Número de pontos turísticos: %d\n", npt2);
 printf("Densidade Populacional: %.2f hab/km²\n",dp2);
 printf("PIB per Capita: R$%.2f\n",pibpc2);   
 
-if(pibpc1 > pibpc2){
+if(populacao1 > populacao2 || pibpc1 > pibpc2){
     printf("Vitória da Carta 1\n");
 }else{
     printf("Vitória da Carta 2\n");
 }
-
 
 return 0;   
 }
