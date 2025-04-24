@@ -24,7 +24,7 @@ float pib1;
 int npt1; //número de pontos turísticos
 float dp1; // Densidade Populacional
 float pibpc1; // PIB per Capita:
-//float SuperPoder1;
+
 
 // Ler variáveis para a primeira carta
 
@@ -54,10 +54,10 @@ scanf("%d", &npt1);
 dp1 = populacao1 / area1;
 pibpc1 = pib1 / populacao1; 
 
-//SuperPoder1 = populacao1 + area1 + pib1 + npt1 + pibpc1;
 
 
-printf("\n Próxima carta:\n");
+
+printf("\nPróxima carta:\n");
 
 //declarar variáveis para a segunda carta
 char estado2;
