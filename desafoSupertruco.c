@@ -1,133 +1,144 @@
 #include <stdio.h>
-/*
-DADOS DAS CARTAS
-nome: manaus
-população:2279686 
-aréa em km²:114010.92
-pib:103281000000
-pontos turisticos:5
-********************
-Nome: Bahia
-População:  14850513 
-Área em km²: 564760.429
-PIB: 402646605640
-pontos turisticos:5*/
+#include <stdlib.h>
 
 int main() {
- //declarar variáveis para a primeira carta
-char estado1;
-char codigo1[4];
-char nome1[20];
-unsigned int populacao1;
-float area1;
-float pib1;
-int npt1; //número de pontos turísticos
-float dp1; // Densidade Populacional
-float pibpc1; // PIB per Capita:
+    // Variáveis para a primeira carta
+    char estado1, codigo1[4], nome1[20];
+    unsigned int populacao1;
+    float area1, pib1, dp1, pibpc1;
+    int npt1;
 
+    // Variáveis para a segunda carta
+    char estado2, codigo2[4], nome2[20];
+    unsigned int populacao2;
+    float area2, pib2, dp2, pibpc2;
+    int npt2;
 
-// Ler variáveis para a primeira carta
+    // Ler dados da primeira carta
+    printf("\nDigite os dados da primeira carta:\n");
+    printf("Estado (letra de 'A' a 'H'): ");
+    scanf(" %c", &estado1);
+    printf("Código da carta (ex: A01): ");
+    scanf("%s", codigo1);
+    printf("Nome da cidade: ");
+    scanf("%s", nome1);
+    printf("População: ");
+    scanf("%u", &populacao1);
+    printf("Área da cidade (em km²): ");
+    scanf("%f", &area1);
+    printf("PIB: ");
+    scanf("%f", &pib1);
+    printf("Número de pontos turísticos: ");
+    scanf("%d", &npt1);
 
-printf("\n Digite os dados da primeira carta.\n");
+    // Calcular dados adicionais para a primeira carta
+    dp1 = populacao1 / area1;
+    pibpc1 = pib1 / populacao1;
 
-printf("Digite uma letra de 'A' a 'H':\n");
-scanf("%c", &estado1);
+    // Ler dados da segunda carta
+    printf("\nDigite os dados da segunda carta:\n");
+    printf("Estado (letra de 'A' a 'H'): ");
+    scanf(" %c", &estado2);
+    printf("Código da carta (ex: A01): ");
+    scanf("%s", codigo2);
+    printf("Nome da cidade: ");
+    scanf("%s", nome2);
+    printf("População: ");
+    scanf("%u", &populacao2);
+    printf("Área da cidade (em km²): ");
+    scanf("%f", &area2);
+    printf("PIB: ");
+    scanf("%f", &pib2);
+    printf("Número de pontos turísticos: ");
+    scanf("%d", &npt2);
 
-printf("Digite o codigo da carta (ex:A01):\n");
-scanf("%s", codigo1);
+    // Calcular dados adicionais para a segunda carta
+    dp2 = populacao2 / area2;
+    pibpc2 = pib2 / populacao2;
 
-printf("Digite o nome da cidade:\n");
-scanf("%s", nome1);
+    // Exibir dados das cartas
+    printf("\nCarta 1:\n");
+    printf("Estado: %c\n", estado1);
+    printf("Código: %s\n", codigo1);
+    printf("Nome: %s\n", nome1);
+    printf("População: %u\n", populacao1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB: R$%.2f\n", pib1);
+    printf("Pontos turísticos: %d\n", npt1);
+    printf("Densidade Populacional: %.2f hab/km²\n", dp1);
+    printf("PIB per Capita: R$%.2f\n", pibpc1);
 
-printf("Digite a população da cidade:\n");
-scanf("%u", &populacao1);
+    printf("\nCarta 2:\n");
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigo2);
+    printf("Nome: %s\n", nome2);
+    printf("População: %u\n", populacao2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB: R$%.2f\n", pib2);
+    printf("Pontos turísticos: %d\n", npt2);
+    printf("Densidade Populacional: %.2f hab/km²\n", dp2);
+    printf("PIB per Capita: R$%.2f\n", pibpc2);
 
-printf("Digite Digite a área da cidade (em km²):\n");
-scanf("%f", &area1);
+    // Menu interativo
+    int opcao;
+    printf("\nEscolha o critério de comparação:\n");
+    printf("1: População\n");
+    printf("2: Área\n");
+    printf("3: PIB\n");
+    printf("4: Densidade Demográfica\n");
+    printf("5: Número de Pontos Turísticos\n");
+    scanf("%d", &opcao);
 
-printf("Digite o PIB:\n");
-scanf("%f", &pib1);
+    // Lógica de comparação
+    switch (opcao) {
+        case 1:
+            if (populacao1 > populacao2) {
+                printf("Carta 1 vence pela maior população.\n");
+            } else if (populacao2 > populacao1) {
+                printf("Carta 2 vence pela maior população.\n");
+            } else {
+                printf("Empate na população.\n");
+            }
+            break;
+        case 2:
+            if (area1 > area2) {
+                printf("Carta 1 vence pela maior área.\n");
+            } else if (area2 > area1) {
+                printf("Carta 2 vence pela maior área.\n");
+            } else {
+                printf("Empate na área.\n");
+            }
+            break;
+        case 3:
+            if (pib1 > pib2) {
+                printf("Carta 1 vence pelo maior PIB.\n");
+            } else if (pib2 > pib1) {
+                printf("Carta 2 vence pelo maior PIB.\n");
+            } else {
+                printf("Empate no PIB.\n");
+            }
+            break;
+        case 4:
+            if (dp1 < dp2) {
+                printf("Carta 1 vence pela menor densidade demográfica.\n");
+            } else if (dp2 < dp1) {
+                printf("Carta 2 vence pela menor densidade demográfica.\n");
+            } else {
+                printf("Empate na densidade demográfica.\n");
+            }
+            break;
+        case 5:
+            if (npt1 > npt2) {
+                printf("Carta 1 vence pelo maior número de pontos turísticos.\n");
+            } else if (npt2 > npt1) {
+                printf("Carta 2 vence pelo maior número de pontos turísticos.\n");
+            } else {
+                printf("Empate no número de pontos turísticos.\n");
+            }
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
 
-printf("Digite o número de pontos turísticos da cidade:\n");
-scanf("%d", &npt1);
-
-dp1 = populacao1 / area1;
-pibpc1 = pib1 / populacao1; 
-
-
-
-
-printf("\nPróxima carta:\n");
-
-//declarar variáveis para a segunda carta
-char estado2;
-char codigo2[4];
-char nome2[20];
-unsigned int populacao2;
-float area2;
-float pib2;
-int npt2; //número de pontos turísticos
-float dp2; // Densidade Populacional
-float pibpc2; // PIB per Capita:
-
-
-printf("\n Digite os dados da primeira carta.\n");
-// Ler variáveis para a segunda carta
-printf("Digite uma letra de 'A' a 'H':\n");
-scanf(" %c", &estado2);
-
-printf("Digite o codigo da carta (ex:A01):\n");
-scanf("%s", codigo2);
-
-printf("Digite o nome da cidade:\n");
-scanf("%s", nome2);
-
-printf("Digite a população da cidade:\n");
-scanf("%u", &populacao2);
-
-printf("Digite Digite a área da cidade (em km²):\n");
-scanf("%f", &area2);
-
-printf("Digite o PIB:\n");
-scanf("%f", &pib2);
-
-printf("Digite o número de pontos turísticos da cidade:\n");
-scanf("%d", &npt2);
-
-dp2 = populacao2 / area2;
-pibpc2 = pib2 / populacao2; 
-
-//Exibir dados da primeira carta
-
-printf("\n Carta 1:\n");
-printf("Estado: %c\n", estado1);
-printf("Código: %s\n", codigo1);
-printf("Nome da cidade: %s\n", nome1);
-printf("População:%u\n", populacao1);
-printf("Área da cidade em: %2.f km²\n", area1);
-printf("PIB: R$%.2f \n", pib1);
-printf("Número de pontos turísticos: %d\n", npt1);
-printf("Densidade Populacional: %.2f hab/km²\n",dp1);
-printf("PIB per Capita: R$%.2f\n",pibpc1);
-
-//Exibir dados da segunda carta
-
-printf("\n Carta 2:\n");
-printf("Estado: %c\n", estado2);
-printf("Código: %s\n", codigo2);
-printf("Nome da cidade: %s\n", nome2);
-printf("População: %u\n", populacao2);
-printf("Área da cidade em: %2.f km²\n", area2);
-printf("PIB: R$%.2f\n", pib2);
-printf("Número de pontos turísticos: %d\n", npt2);
-printf("Densidade Populacional: %.2f hab/km²\n",dp2);
-printf("PIB per Capita: R$%.2f\n",pibpc2);   
-
-if(populacao1 > populacao2 || pibpc1 > pibpc2){
-    printf("Vitória da Carta 1\n");
-}else{
-    printf("Vitória da Carta 2\n");
-}
-
-return 0;   
+    return 0;
 }
